@@ -574,7 +574,7 @@ export default class Autosuggest extends Component {
     };
 
     const val = valueBeforeUpDown || value;
-    const enderSuggestionData = {
+    const renderSuggestionData = {
       query: val ? (valueBeforeUpDown || value).trim() : null
     };
 

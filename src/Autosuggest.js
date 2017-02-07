@@ -572,8 +572,10 @@ export default class Autosuggest extends Component {
         onKeyDown && onKeyDown(event);
       }
     };
-    const renderSuggestionData = {
-      query: (valueBeforeUpDown || value).trim()
+
+    const val = valueBeforeUpDown || value;
+    const enderSuggestionData = {
+      query: val ? (valueBeforeUpDown || value).trim() : null
     };
 
     return (

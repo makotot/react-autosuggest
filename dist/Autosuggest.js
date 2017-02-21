@@ -430,6 +430,12 @@ var Autosuggest = function (_Component) {
 
                   _this2.justSelectedSuggestion = true;
 
+                  if (focusInputOnSuggestionClick === true) {
+                    _this2.input.focus();
+                  } else {
+                    _this2.onBlur();
+                  }
+
                   setTimeout(function () {
                     _this2.justSelectedSuggestion = false;
                   });

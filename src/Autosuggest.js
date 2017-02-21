@@ -523,6 +523,12 @@ export default class Autosuggest extends Component {
 
               this.justSelectedSuggestion = true;
 
+              if (focusInputOnSuggestionClick === true) {
+                this.input.focus();
+              } else {
+                this.onBlur();
+              }
+
               setTimeout(() => {
                 this.justSelectedSuggestion = false;
               });

@@ -427,15 +427,13 @@ export default class Autosuggest extends Component {
     const autowhateverInputProps = {
       ...inputProps,
       onFocus: event => {
-        if (!this.justSelectedSuggestion && !this.justClickedOnSuggestionsContainer) {
-          const shouldRender = shouldRenderSuggestions(value);
+        const shouldRender = shouldRenderSuggestions(value);
 
-          this.inputFocused(shouldRender);
-          onFocus && onFocus(event);
+        this.inputFocused(shouldRender);
+        onFocus && onFocus(event);
 
-          if (shouldRender) {
-            onSuggestionsFetchRequested({ value });
-          }
+        if (shouldRender) {
+          onSuggestionsFetchRequested({ value });
         }
       },
       onBlur: event => {
@@ -523,7 +521,7 @@ export default class Autosuggest extends Component {
 
               this.justSelectedSuggestion = true;
 
-              if (focusInputOnSuggestionClick === true) {
+              if (this.props.focusInputOnSuggestionClick === true) {
                 this.input.focus();
               } else {
                 this.onBlur();

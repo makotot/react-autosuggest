@@ -330,15 +330,13 @@ var Autosuggest = function (_Component) {
       var items = isOpen ? suggestions : [];
       var autowhateverInputProps = _extends({}, inputProps, {
         onFocus: function onFocus(event) {
-          if (!_this2.justSelectedSuggestion && !_this2.justClickedOnSuggestionsContainer) {
-            var shouldRender = shouldRenderSuggestions(value);
+          var shouldRender = shouldRenderSuggestions(value);
 
-            _this2.inputFocused(shouldRender);
-            _onFocus && _onFocus(event);
+          _this2.inputFocused(shouldRender);
+          _onFocus && _onFocus(event);
 
-            if (shouldRender) {
-              onSuggestionsFetchRequested({ value: value });
-            }
+          if (shouldRender) {
+            onSuggestionsFetchRequested({ value: value });
           }
         },
         onBlur: function onBlur(event) {
@@ -430,7 +428,7 @@ var Autosuggest = function (_Component) {
 
                   _this2.justSelectedSuggestion = true;
 
-                  if (focusInputOnSuggestionClick === true) {
+                  if (_this2.props.focusInputOnSuggestionClick === true) {
                     _this2.input.focus();
                   } else {
                     _this2.onBlur();

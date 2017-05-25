@@ -340,7 +340,7 @@ var Autosuggest = function (_Component) {
           }
         },
         onBlur: function onBlur(event) {
-          if (_this2.justClickedOnSuggestionsContainer) {
+          if (_this2.justClickedOnSuggestionsContainer && typeof _this2.input.focus === 'function') {
             _this2.input.focus();
             return;
           }

@@ -437,7 +437,7 @@ export default class Autosuggest extends Component {
         }
       },
       onBlur: event => {
-        if (this.justClickedOnSuggestionsContainer) {
+        if (this.justClickedOnSuggestionsContainer && typeof this.input.focus === 'function') {
           this.input.focus();
           return;
         }

@@ -265,7 +265,7 @@ var Autosuggest = function (_Component) {
       var node = startNode;
 
       do {
-        if (node.getAttribute('data-suggestion-index') !== null) {
+        if (typeof node.getAttribute === 'function' && node.getAttribute('data-suggestion-index') !== null) {
           return node;
         }
 
@@ -593,7 +593,7 @@ var _initialiseProps = function _initialiseProps() {
     event.target;
 
     do {
-      if (node.getAttribute('data-suggestion-index') !== null) {
+      if (typeof node.getAttribute === 'function' && node.getAttribute('data-suggestion-index') !== null) {
         // Suggestion was clicked
         return;
       }
